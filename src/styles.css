@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.cdnfonts.com/css/raleway-5');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+
+:root {
+    --fuente-titulos: 'Raleway', sans-serif;
+    --fuente-texto: 'Poppins', sans-serif;
+    --color-menu: #F28582;
+    --color-texto-menu: #FFFFFF;
+    --color-fondo-principal: #F5cac2;
+    --color-titulos: #F28582;
+    --color-textos: #000000;
+    --tamaño-titulos: 30px;
+  }
+
+  body{
+    background-color: var(--color-fondo-principal);
+    margin: 0%;
+    padding: 0%;
+    font-family: var(--fuente-titulos);
+    box-sizing: border-box;
+  }
