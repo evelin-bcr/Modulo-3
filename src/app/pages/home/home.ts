@@ -1,14 +1,19 @@
-import { Component } from '@angular/core';
-// Importar la case dek componente y agregarlo a los imports (en este caso es navbar)
-import { Navbar } from '../../components/navbar/navbar';
+import { Component} from '@angular/core';
+// 1. Importar la clase del componente y agregarlo a los imports
+import { Card } from '../../components/card/card';
+
 @Component({
   selector: 'app-home',
-  imports: [Navbar],
+  imports: [Card],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
 export class Home {
 
-}
+// Lógica de funcionamiento de nuestro componente
 
-// Logica de funcionamiento de nuestro componente
+
+  
+
+
+}

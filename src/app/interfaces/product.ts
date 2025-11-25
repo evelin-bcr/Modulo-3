@@ -1,12 +1,11 @@
+// definir la estructura de los datos
 export interface Product {
-    //URL de la imagen del producto
-    _id: string;
-    image: string; 
-    title: string; 
-    description?: string; //? significa que no es obligatorio
+    _id:string; //(requerido)
+    image : string; //(requirido)
+    title : string; //(requirido)
+    description?: string; //(no es requerido)
     price: number;
     categories?: string;
     isAvailable?: boolean;
-
+    date?: Date; //opcional
 }
-

@@ -1,12 +1,20 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './components/navbar/navbar';
+import { Footer } from './components/footer/footer';
+import { LoginService } from './services/login';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Navbar],
+  imports: [RouterOutlet, Navbar, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('fronted');
+  
+  private _loginService = inject(LoginService);
+  isInvisible : boolean = this._loginService.isAdmin();
+  // Si es administrador isInisible = true
+  // si no es administrador isInvisible = false
+
 }

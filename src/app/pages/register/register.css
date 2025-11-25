@@ -1,0 +1,27 @@
+main {
+    border: solid red;
+    width: 100vw;  /* vw = viewport width */
+    height: 100vh; /* vh = viewport height */
+  }
+  
+
+.formulario{
+    border:solid #f28582;
+    width: 40%;
+    margin: 150px auto;
+    text-align: center;
+    padding-top: 5vh;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btn{
+
+    background-color: var(--color-principal, #f28582); 
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}

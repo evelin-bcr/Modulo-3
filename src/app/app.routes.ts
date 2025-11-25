@@ -1,17 +1,31 @@
 import { Routes } from '@angular/router';
-// Importar todos nuestros componentes pagina
+// 1. importar todos nuestros componentes página
 import { Home } from './pages/home/home';
 import { Admin } from './pages/admin/admin';
 import { Login } from './pages/login/login';
 import { NotFound } from './pages/not-found/not-found';
 import { Products } from './pages/products/products';
 import { Register } from './pages/register/register';
+// importar el guardian y esfecificar qué rutas son protegidas
+import { authGuard } from './components/guards/auth-guard';
+import { Users } from './pages/admin/users/users';
+import { Inventory } from './pages/admin/inventory/inventory';
 
 export const routes: Routes = [
-    {path:'',component:Home,title:'Inicio'},
-    {path:'admin',component:Admin,title:'Dashboard'},
-    {path:'login',component:Login,title:'Inicio Sesión'},
-    {path:'products',component:Products,title:'Productos'},
-    {path:'register',component:Register,title:'Registro'},
-    {path:'**',component:NotFound,title:'404'}
+    { path: '', component: Home, title: 'Inicio' },
+    {
+        path: 'dashboard', // path: 'admin' -> ruta principal
+        component: Admin,
+        title: 'Dashboard',
+        canActivate: [authGuard],
+        canActivateChild: [authGuard], //Proteger rutas hijas
+        children: [
+            {path: '', component: Users},
+            {path: 'inventory', component: Inventory} //title es opcional
+        ]
+    },
+    { path: 'login', component: Login, title: 'Inicio Sesión' },
+    { path: 'products', component: Products, title: 'Productos' },
+    { path: 'register', component: Register, title: 'Registro' },
+    { path: '**', component: NotFound, title: '404' },
 ];
